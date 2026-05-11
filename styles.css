@@ -66,6 +66,7 @@ h1 {
 
 .hero p,
 .split p,
+.coverage p,
 .guardrails p {
   max-width: 690px;
   color: var(--muted);
@@ -105,7 +106,8 @@ h1 {
   background: #f7ead4;
 }
 
-.split {
+.split,
+.coverage {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
   gap: 42px;
@@ -146,6 +148,7 @@ ol li::before {
 }
 
 .sample,
+.coverage,
 .guardrails {
   padding: 86px 6vw;
 }
@@ -177,6 +180,28 @@ ol li::before {
   font-weight: 900;
 }
 
+.coverage {
+  background: var(--surface);
+}
+
+.coverage ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coverage li {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #eef3ec;
+  color: var(--forest);
+  font-weight: 900;
+}
+
 .guardrails {
   background: #22392f;
   color: white;
@@ -200,7 +225,8 @@ ol li::before {
   }
 
   .hero,
-  .split {
+  .split,
+  .coverage {
     grid-template-columns: 1fr;
   }
 
@@ -212,6 +238,10 @@ ol li::before {
   .row {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .coverage ul {
+    grid-template-columns: 1fr;
   }
 }
 

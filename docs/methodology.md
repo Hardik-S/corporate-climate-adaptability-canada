@@ -26,3 +26,5 @@ Future public-source expansion should record:
 
 The current script assigns a small positive score when an excerpt contains adaptation-action terms such as `approved`, `piloted`, `mapping`, or `planning`. It assigns a lower score when language indicates unresolved review or deferral. This is a smoke-testable proxy, not a research conclusion.
 
+The summary also reports unique sector coverage. That field is a fixture-quality check, not a claim that the sample represents the Canadian market. It helps future reviewers see when public filings need broader sector balance before conclusions are drafted.
+

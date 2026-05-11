@@ -32,9 +32,12 @@ def summarize(path: Path) -> dict[str, object]:
     ]
 
     average_score = sum(item["score"] for item in scored) / len(scored)
+    sectors = sorted({row["sector"] for row in rows})
     return {
         "rows": len(scored),
         "average_score": round(average_score, 2),
+        "sector_count": len(sectors),
+        "sectors": sectors,
         "highest_signal": max(scored, key=lambda item: item["score"]),
         "scored_companies": scored,
     }

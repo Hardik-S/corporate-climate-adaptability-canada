@@ -19,6 +19,11 @@ class SentimentSummaryTests(unittest.TestCase):
         self.assertEqual(result["rows"], 4)
         self.assertIn("highest_signal", result)
         self.assertGreaterEqual(result["highest_signal"]["score"], 1)
+        self.assertEqual(result["sector_count"], 4)
+        self.assertEqual(
+            result["sectors"],
+            ["Consumer Staples", "Real Estate", "Transportation", "Utilities"],
+        )
 
 
 if __name__ == "__main__":
