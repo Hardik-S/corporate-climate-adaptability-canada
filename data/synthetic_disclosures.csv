@@ -1,6 +1,6 @@
-company,sector,excerpt
-Northstar Foods,Consumer Staples,The board approved flood planning and supplier continuity reviews for high-risk regions.
-ShieldGrid Utilities,Utilities,Extreme weather risk is tracked annually but adaptation funding remains under review.
-PrairieLine Logistics,Transportation,Heat disruption plans were piloted at two terminals with employee safety metrics.
-Harbour REIT,Real Estate,Asset-level climate resilience mapping is planned after the next portfolio audit.
+company,sector,source_type,retrieval_date,quote_permission,excerpt
+Northstar Foods,Consumer Staples,synthetic disclosure,2026-05-10,synthetic-ok,The board approved flood planning and supplier continuity reviews for high-risk regions.
+ShieldGrid Utilities,Utilities,synthetic disclosure,2026-05-10,synthetic-ok,Extreme weather risk is tracked annually but adaptation funding remains under review.
+PrairieLine Logistics,Transportation,synthetic disclosure,2026-05-10,synthetic-ok,Heat disruption plans were piloted at two terminals with employee safety metrics.
+Harbour REIT,Real Estate,synthetic disclosure,2026-05-10,synthetic-ok,Asset-level climate resilience mapping is planned after the next portfolio audit.
 

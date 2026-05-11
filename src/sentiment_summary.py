@@ -6,6 +6,7 @@ from pathlib import Path
 
 ACTION_TERMS = {"approved", "piloted", "mapping", "planning", "resilience", "continuity"}
 DEFERRED_TERMS = {"review", "planned", "pending", "under review"}
+SOURCE_REVIEW_FIELDS = ("source_type", "retrieval_date", "quote_permission")
 
 
 def score_excerpt(excerpt: str) -> int:
@@ -13,6 +14,27 @@ def score_excerpt(excerpt: str) -> int:
     score = sum(1 for term in ACTION_TERMS if term in text)
     score -= sum(1 for term in DEFERRED_TERMS if term in text)
     return score
+
+
+def summarize_source_review(rows: list[dict[str, str]]) -> dict[str, object]:
+    ready_rows = sum(
+        1
+        for row in rows
+        if all(row.get(field, "").strip() for field in SOURCE_REVIEW_FIELDS)
+    )
+    permission_statuses = sorted(
+        {
+            row.get("quote_permission", "").strip()
+            for row in rows
+            if row.get("quote_permission", "").strip()
+        }
+    )
+    return {
+        "required_fields": list(SOURCE_REVIEW_FIELDS),
+        "ready_rows": ready_rows,
+        "missing_rows": len(rows) - ready_rows,
+        "permission_statuses": permission_statuses,
+    }
 
 
 def summarize(path: Path) -> dict[str, object]:
@@ -38,6 +60,7 @@ def summarize(path: Path) -> dict[str, object]:
         "average_score": round(average_score, 2),
         "sector_count": len(sectors),
         "sectors": sectors,
+        "source_review": summarize_source_review(rows),
         "highest_signal": max(scored, key=lambda item: item["score"]),
         "scored_companies": scored,
     }

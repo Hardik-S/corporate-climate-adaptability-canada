@@ -25,6 +25,12 @@ class SentimentSummaryTests(unittest.TestCase):
             ["Consumer Staples", "Real Estate", "Transportation", "Utilities"],
         )
 
+    def test_summary_reports_source_review_readiness(self) -> None:
+        result = summarize(FIXTURE)
+        self.assertEqual(result["source_review"]["ready_rows"], 4)
+        self.assertEqual(result["source_review"]["missing_rows"], 0)
+        self.assertEqual(result["source_review"]["permission_statuses"], ["synthetic-ok"])
+
 
 if __name__ == "__main__":
     unittest.main()

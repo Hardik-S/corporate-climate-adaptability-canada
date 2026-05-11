@@ -8,13 +8,13 @@ This repository currently includes:
 
 - `index.html` and `styles.css` for a Vercel-ready methodology page.
 - `data/synthetic_disclosures.csv` with sample disclosure excerpts.
-- `src/sentiment_summary.py` for transparent keyword-based scoring and sector coverage.
+- `src/sentiment_summary.py` for transparent keyword-based scoring, sector coverage, and source-review readiness.
 - `tests/test_sentiment_summary.py` for deterministic verification.
 - `docs/methodology.md` documenting assumptions and rejected approaches.
 
 ## Publication Boundaries
 
-The sample data is synthetic. It is not a ranking of Canadian companies, not investment research, and not a claim about any specific issuer. Sector coverage is reported only to show fixture breadth before any public-source expansion. Future work can add public filings only after source links, extraction dates, and quote permissions are documented.
+The sample data is synthetic. It is not a ranking of Canadian companies, not investment research, and not a claim about any specific issuer. Sector coverage is reported only to show fixture breadth before any public-source expansion. The fixture includes source-type, retrieval-date, and quote-permission columns because future public filings should not enter the model until those review fields are complete.
 
 ## Quick Start
 
